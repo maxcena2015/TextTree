@@ -23,17 +23,6 @@ $(document).on('click', '.root-add-btn', function (event) {
     });
 })
 
-$(document).on('click', '.root-remove-btn', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var nodeId = ($(this).closest('.root-element-wrapper').data('id') !== undefined)
-        ?
-        $(this).closest('.root-element-wrapper').data('id')
-        :
-        null
-    ;
-})
-
 $(document).on('click','.root-delete-modal-open', function () {
     var deletingRootId = $(this).parents('.root-element-wrapper').data('id');
     $('.modal .modal-delete-root-id').html(deletingRootId);
