@@ -21,7 +21,60 @@ a:hover {
 }
 
 .root-childs {
-    margin-left: 20px;
+    overflow: hidden;
+    max-height: 10000px;
+    transition: max-height 2.5s ease-in-out;
+}
+
+.root-childs.hide {
+    max-height: 0;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.root-childs .root-element-wrapper {
+    padding-left: 32px;
+    border-left: 1px solid #000000;
+    position: relative;
+}
+
+.root-childs .root-element-wrapper:last-child {
+    border-left: none;
+    left: 1px;
+}
+
+.root-childs .root-child-line {
+    position: absolute;
+    top: 0;
+    left: -1px;
+}
+
+.root-childs .root-child-line::before {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 13px;
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+.root-triangle-btn {
+    position: relative;
+    width: 14px;
+    height: 21px;
+    display: inline-block;
+}
+
+.root-triangle-btn::before {
+    content: "▲";
+    position: absolute;
+    transform: rotate(90deg);
+    top: 3px;
+}
+
+.root-triangle-btn.opened::before {
+    transform: rotate(180deg);
+    left: -2px;
+    top: 5px;
 }
 
 /*******************************************

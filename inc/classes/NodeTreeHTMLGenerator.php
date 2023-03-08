@@ -60,11 +60,15 @@ class NodeTreeHTMLGenerator
         ?>
 
         <div class="root-element-wrapper" data-id="<?php echo $node['id']; ?>">
-                    <span class="root-element">
-                        Root <?php echo $node['id']; ?>
+                    <div class="root-element">
+                        <span class="root-child-line"></span>
+                        <?php if (!empty($node['children'])) { ?>
+                            <span class="root-triangle-btn opened"></span>
+                        <?php } ?>
+                        <span class="root-name">Root <?php echo $node['id']; ?></span>
                         <a href="#" class="root-action-btn root-add-btn">+</a>
                         <a href="#" class="root-action-btn root-delete-modal-open" data-bs-toggle="modal" data-bs-target="#deleteRootModal">-</a>
-                    </span>
+                    </div>
             <div class="root-childs">
                 <?php
                 if (!empty($node['children'])) {
