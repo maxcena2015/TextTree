@@ -41,8 +41,10 @@ $(document).on('click','.root-delete-modal-open', function () {
     removableIds = $.merge(removableIds, getAllChildIds(this));
     $('.btn-confirm-deleting').unbind('click');
     $('.modal').on('click', '.btn-confirm-deleting', function () {
+        console.log('remove nodes');
         removeNodes(removableIds);
         $('#deleteRootModal').modal('hide');
+        clearInterval(deleteRootTimeout);
     });
     var timeLeft = 20;
     $('.modal-delete-timer').html(timeLeft);
