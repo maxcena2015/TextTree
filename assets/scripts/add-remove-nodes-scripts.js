@@ -43,6 +43,7 @@ $(document).on('click','.root-delete-modal-open', function () {
     $('.modal').on('click', '.btn-confirm-deleting', function () {
         removeNodes(removableIds);
         $('#deleteRootModal').modal('hide');
+        clearInterval(deleteRootTimeout);
     });
     var timeLeft = 20;
     $('.modal-delete-timer').html(timeLeft);
