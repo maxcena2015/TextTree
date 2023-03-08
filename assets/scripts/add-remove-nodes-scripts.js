@@ -39,7 +39,7 @@ $(document).on('click','.root-delete-modal-open', function () {
     $('.modal .modal-delete-root-id').html(deletingRootId);
     var removableIds = [deletingRootId];
     removableIds = $.merge(removableIds, getAllChildIds(this));
-    $('.btn-confirm-deleting').unbind('click');
+    $('.modal').off('click', '.btn-confirm-deleting');
     $('.modal').on('click', '.btn-confirm-deleting', function () {
         removeNodes(removableIds);
         $('#deleteRootModal').modal('hide');
