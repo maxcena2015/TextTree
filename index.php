@@ -26,7 +26,10 @@ $nodeTreeGenerator = new NodeTreeHTMLGenerator($nodeFromMySQLArrayGenerator);
     <script type="text/javascript" src="assets/scripts/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="assets/scripts/add-remove-nodes-scripts.js"></script>
     <script type="text/javascript" src="assets/scripts/show-hide-child-trees.js"></script>
-
-    <?php require_once 'inc/modal/deleteModal.php'; ?>
+    <script type="text/javascript" src="assets/scripts/rename-nodes.js"></script>
+    <?php
+    require_once 'inc/modal/deleteModal.php';
+    require_once 'inc/modal/renameModal.php';
+    ?>
 </body>
 </html>

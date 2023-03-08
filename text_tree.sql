@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 08 2023 г., 12:52
+-- Время создания: Мар 08 2023 г., 16:26
 -- Версия сервера: 10.4.19-MariaDB
 -- Версия PHP: 8.0.7
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `nodes` (
   `id` int(11) NOT NULL,
+  `name` varchar(30) DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -36,21 +37,17 @@ CREATE TABLE `nodes` (
 -- Дамп данных таблицы `nodes`
 --
 
-INSERT INTO `nodes` (`id`, `parent_id`) VALUES
-(15, NULL),
-(67, 15),
-(76, 67),
-(77, 67),
-(78, 67),
-(79, 76),
-(81, 78),
-(86, NULL),
-(113, 76),
-(114, 76),
-(115, 76),
-(137, 113),
-(138, 137),
-(139, 137);
+INSERT INTO `nodes` (`id`, `name`, `parent_id`) VALUES
+(15, '', NULL),
+(67, '', 15),
+(76, 'Root number', 67),
+(78, '', 67),
+(86, 'Testing', NULL),
+(113, 'Header 2', 76),
+(155, '', 67),
+(156, 'Bootstrap Footer', 155),
+(157, 'Footer', 155),
+(220, 'QWE', 113);
 
 --
 -- Индексы сохранённых таблиц
@@ -70,7 +67,7 @@ ALTER TABLE `nodes`
 -- AUTO_INCREMENT для таблицы `nodes`
 --
 ALTER TABLE `nodes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=221;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

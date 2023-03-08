@@ -70,12 +70,13 @@ class NodeFromMySQLArrayGenerator implements NodeFromDatabaseArrayGenerator
      * generate node
      *
      * @param $id
+     * @param $name
      * @param $parent
      *
      * @return array
      */
-    private function treeNode($id, $parent) {
-        return array('id' => $id, 'parent_id' => $parent, 'children' => array());
+    private function treeNode($id, $name, $parent) {
+        return array('id' => $id, 'name' => $name, 'parent_id' => $parent, 'children' => array());
     }
 
     /**
@@ -107,9 +108,10 @@ class NodeFromMySQLArrayGenerator implements NodeFromDatabaseArrayGenerator
 
         foreach($this->nodes as $node) {
             $id = $node['id'];
+            $name = $node['name'];
             $parentId = $node['parent_id'];
             $map[$id] = &$map[$parentId]['children'][];
-            $map[$id] = $this->treeNode($id, $parentId);
+            $map[$id] = $this->treeNode($id, $name, $parentId);
         }
 
         array_shift($map);

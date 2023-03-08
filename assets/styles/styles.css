@@ -16,8 +16,8 @@ a:hover {
     color: #7272ff;
 }
 
-.root-element {
-    /*border-bottom: 1px solid #0b2e13;*/
+.root-name {
+    cursor: pointer;
 }
 
 .root-childs {

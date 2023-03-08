@@ -13,7 +13,6 @@
             </div>
             <div class="modal-body">
                 This is very dangerous, you shouldn't do it! Are you really really sure?
-                You are deleting root <span class="modal-delete-root-id"></span>
             </div>
             <div class="modal-footer">
                 <span class="modal-delete-timer text-danger">20</span>
