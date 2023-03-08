@@ -1,0 +1,36 @@
+a:hover {
+    /*text-decoration: none;*/
+}
+
+.create-root-main {
+    display: block;
+    margin: 10px;
+    width: 125px;
+}
+
+.text-tree-wrapper {
+    margin-left: 12px;
+}
+
+.root-action-btn {
+    color: #7272ff;
+}
+
+.root-element {
+    /*border-bottom: 1px solid #0b2e13;*/
+}
+
+.root-childs {
+    margin-left: 20px;
+}
+
+/*******************************************
+
+Modal Delete Root
+
+********************************************/
+
+.modal-footer .modal-delete-timer {
+    display: block;
+    margin-right: auto;
+}
